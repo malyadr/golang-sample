@@ -36,3 +36,4 @@ pipeline:
                     command: |-
                       cd hello
                       go build
+                      go test ./...
