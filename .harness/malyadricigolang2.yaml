@@ -54,6 +54,8 @@ pipeline:
                         -Dsonar.projectKey=golang-poc \
                         -Dsonar.sources=. \
                         -Dsonar.host.url=https://mydomain2.mooo.com/sonarqube
+                    envVariables:
+                      SONAR_TOKEN: <+secrets.getValue("vault_password")>
               - step:
                   type: BuildAndPushDockerRegistry
                   name: BuildAndPushDockerRegistry_1
