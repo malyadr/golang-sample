@@ -5,7 +5,7 @@ FROM golang:1.22
 WORKDIR /app
 
 # Copy the Go source code
-COPY /hello .
+COPY hello/ .
 
 # Build the Go application
 RUN go build -o my_app
