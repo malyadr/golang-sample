@@ -33,4 +33,6 @@ pipeline:
                     connectorRef: Malyadridocker
                     image: golang:tip
                     shell: Sh
-                    command: go build
+                    command: |-
+                      cd hello
+                      go build
