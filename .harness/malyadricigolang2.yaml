@@ -39,7 +39,7 @@ pipeline:
                       go test ./...
               - step:
                   type: Run
-                  name: Run_2
+                  name: sonar scan
                   identifier: Run_2
                   spec:
                     shell: Sh
@@ -55,7 +55,7 @@ pipeline:
                         -Dsonar.sources=. \
                         -Dsonar.host.url=https://mydomain2.mooo.com/sonarqube
                     envVariables:
-                      SONAR_TOKEN: <+secrets.getValue("vault_password")>
+                      SONAR_TOKEN: <+secrets.getValue("sonar-token-malyadri")>
               - step:
                   type: BuildAndPushDockerRegistry
                   name: BuildAndPushDockerRegistry_1
