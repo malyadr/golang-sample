@@ -37,3 +37,12 @@ pipeline:
                       cd hello
                       go build
                       go test ./...
+              - step:
+                  type: BuildAndPushDockerRegistry
+                  name: BuildAndPushDockerRegistry_1
+                  identifier: BuildAndPushDockerRegistry_1
+                  spec:
+                    connectorRef: Malyadridocker
+                    repo: malyadr/golang-poc
+                    tags:
+                      - latest
